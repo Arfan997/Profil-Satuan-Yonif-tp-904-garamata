@@ -1,0 +1,2153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yonif TP 904/Garamata</title>
+
+<style>
+
+/* =========================================================
+   WARNA UTAMA
+   Merah tanah Karo + hitam + emas
+========================================================= */
+
+:root {
+    --black: #080606;
+    --black2: #110909;
+
+    --red: #741b18;
+    --red2: #941f1a;
+    --red3: #b52b22;
+    --red-dark: #3c0d0b;
+
+    --gold: #c9a84e;
+    --gold2: #f0d477;
+    --gold3: #ffe9a0;
+
+    --white: #f7f4ed;
+    --muted: #b9afa7;
+
+    --line: rgba(201,168,78,.25);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 9999;
+
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(8,5,5,.88);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid var(--line);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.brand-mark {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+
+    background: rgba(116,27,24,.35);
+
+    overflow: hidden;
+}
+
+.brand-mark img {
+    width: 88%;
+    height: 88%;
+    object-fit: contain;
+}
+
+.brand span {
+    font-size: 14px;
+    color: var(--white);
+}
+
+nav ul {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+nav a {
+    color: #ded6d0;
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--gold2);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(181,43,34,.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #090404,
+            #3c0d0b 48%,
+            #100505
+        );
+}
+
+
+/* Pola latar */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    opacity: .22;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 48%,
+            rgba(240,212,119,.12) 49%,
+            transparent 51%
+        );
+
+    background-size: 55px 55px;
+}
+
+
+/* Cahaya merah */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background: rgba(148,31,26,.20);
+
+    filter: blur(100px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1000px;
+
+    padding: 130px 25px 80px;
+}
+
+
+/* =========================================================
+   LOGO HERO
+========================================================= */
+
+.emblem {
+    width: 190px;
+    height: 190px;
+
+    margin: 0 auto 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 2px solid var(--gold);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,168,78,.13),
+            rgba(0,0,0,.35)
+        );
+
+    box-shadow:
+        0 0 0 12px rgba(201,168,78,.035),
+        0 0 90px rgba(201,168,78,.20);
+}
+
+.emblem img {
+    width: 84%;
+    height: 84%;
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.eyebrow {
+    color: var(--gold2);
+
+    letter-spacing: 7px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin: 20px 0 4px;
+
+    font-size: clamp(48px, 9vw, 105px);
+
+    line-height: .9;
+
+    letter-spacing: -5px;
+
+    font-weight: 900;
+}
+
+.hero h2 {
+    color: var(--gold2);
+
+    font-size: clamp(25px, 4vw, 42px);
+
+    letter-spacing: 11px;
+
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #d0c6c0;
+
+    line-height: 1.9;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 35px;
+
+    padding: 15px 25px;
+
+    border-radius: 7px;
+
+    border: 1px solid var(--gold);
+
+    background: var(--gold);
+
+    color: #170c08;
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    transition: .3s;
+}
+
+.btn:hover {
+    background: var(--gold2);
+
+    transform: translateY(-4px);
+}
+
+.btn-outline {
+    background: transparent;
+
+    color: var(--gold2);
+}
+
+.btn-outline:hover {
+    background: rgba(201,168,78,.12);
+}
+
+
+/* =========================================================
+   MOTTO STRIP
+========================================================= */
+
+.motto {
+    position: relative;
+
+    z-index: 10;
+
+    max-width: 1000px;
+
+    margin: -45px auto 0;
+
+    padding: 22px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--red-dark),
+            var(--red),
+            var(--red-dark)
+        );
+
+    border: 1px solid var(--line);
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.4);
+}
+
+.motto strong {
+    color: var(--gold2);
+
+    letter-spacing: 5px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+section {
+    padding: 110px 7%;
+}
+
+.section-head {
+    text-align: center;
+
+    max-width: 750px;
+
+    margin: 0 auto 55px;
+}
+
+.section-head .tag {
+    color: var(--gold);
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+.section-head h2 {
+    margin: 12px 0;
+
+    font-size: clamp(32px, 5vw, 52px);
+
+    font-weight: 900;
+}
+
+.section-head p {
+    color: var(--muted);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   PROFIL
+========================================================= */
+
+.about {
+    background:
+        linear-gradient(
+            180deg,
+            #100707,
+            #180909
+        );
+}
+
+.about-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr .9fr;
+
+    gap: 22px;
+}
+
+.panel {
+    padding: 38px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(116,27,24,.65),
+            rgba(12,5,5,.96)
+        );
+
+    border: 1px solid var(--line);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
+}
+
+.panel h3 {
+    color: var(--gold2);
+
+    margin-bottom: 18px;
+
+    font-size: 21px;
+}
+
+.panel p {
+    color: #c0b7b0;
+
+    line-height: 1.9;
+}
+
+.quote {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-left: 3px solid var(--gold);
+
+    color: #f1e9df;
+
+    background: rgba(0,0,0,.20);
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   INFO
+========================================================= */
+
+.info-list {
+    margin-top: 20px;
+}
+
+.info-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+
+    color: #b9aea7;
+
+    font-size: 13px;
+}
+
+.info-row strong {
+    color: var(--gold2);
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   NILAI
+========================================================= */
+
+.values {
+    background: #090505;
+}
+
+.value-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 18px;
+}
+
+.value {
+    padding: 35px;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #35100e,
+            #100707
+        );
+
+    border: 1px solid rgba(201,168,78,.14);
+
+    transition: .35s;
+}
+
+.value:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--gold);
+}
+
+.value-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 12px;
+
+    background: rgba(201,168,78,.09);
+
+    border: 1px solid rgba(201,168,78,.22);
+
+    color: var(--gold2);
+
+    font-size: 25px;
+}
+
+.value h3 {
+    color: var(--gold2);
+
+    margin-bottom: 12px;
+}
+
+.value p {
+    color: #aa9f98;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOTO PRAJURIT
+========================================================= */
+
+.soldiers {
+    background:
+        radial-gradient(
+            circle at center,
+            #4a110e,
+            #0b0404 70%
+        );
+}
+
+.soldier-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 18px;
+}
+
+.soldier-card {
+    position: relative;
+
+    height: 330px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    border: 1px solid var(--line);
+
+    background: #160807;
+
+    transition: .35s;
+}
+
+.soldier-card:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--gold);
+}
+
+.soldier-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: .5s;
+}
+
+.soldier-card:hover img {
+    transform: scale(1.06);
+}
+
+.soldier-overlay {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 28px 22px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.95)
+        );
+}
+
+.soldier-overlay h3 {
+    color: var(--gold2);
+
+    margin-bottom: 6px;
+}
+
+.soldier-overlay p {
+    color: #ddd4ce;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   HIGHLIGHT
+========================================================= */
+
+.highlight {
+    background: #0d0505;
+}
+
+.highlight-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 18px;
+}
+
+.highlight-card {
+    padding: 35px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #42110e,
+            #110606
+        );
+
+    border: 1px solid var(--line);
+}
+
+.highlight-card .number {
+    color: var(--gold2);
+
+    font-size: 42px;
+
+    font-weight: 900;
+}
+
+.highlight-card h3 {
+    margin: 10px 0;
+
+    color: #f2eae2;
+}
+
+.highlight-card p {
+    color: #aa9f98;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.history {
+    background:
+        linear-gradient(
+            180deg,
+            #0d0505,
+            #180707
+        );
+}
+
+.timeline {
+    max-width: 850px;
+
+    margin: auto;
+
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 20px;
+
+    top: 0;
+    bottom: 0;
+
+    width: 1px;
+
+    background: rgba(201,168,78,.4);
+}
+
+.timeline-item {
+    position: relative;
+
+    padding:
+        0
+        0
+        45px
+        65px;
+}
+
+.timeline-dot {
+    position: absolute;
+
+    left: 12px;
+    top: 3px;
+
+    width: 17px;
+    height: 17px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    box-shadow:
+        0 0 0 6px rgba(201,168,78,.10);
+}
+
+.timeline-item span {
+    color: var(--gold);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.timeline-item h3 {
+    color: var(--gold2);
+
+    margin: 8px 0;
+}
+
+.timeline-item p {
+    color: #aa9f98;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   GALERI KEGIATAN
+========================================================= */
+
+.gallery {
+    background: #090404;
+}
+
+.gallery-grid {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    grid-auto-rows: 230px;
+
+    gap: 14px;
+}
+
+.photo {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background: #210907;
+
+    border: 1px solid rgba(201,168,78,.20);
+}
+
+.photo.big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: .5s;
+}
+
+.photo:hover img {
+    transform: scale(1.07);
+}
+
+.photo::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.55),
+            transparent 50%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   BERITA
+========================================================= */
+
+.news {
+    background:
+        linear-gradient(
+            180deg,
+            #130606,
+            #090303
+        );
+}
+
+.news-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 18px;
+}
+
+.news-card {
+    overflow: hidden;
+
+    border-radius: 17px;
+
+    background: #160807;
+
+    border: 1px solid rgba(255,255,255,.07);
+
+    transition: .3s;
+}
+
+.news-card:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--gold);
+}
+
+.news-image {
+    height: 500px;
+
+    overflow: hidden;
+
+    background: var(--red-dark);
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: .5s;
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.06);
+}
+
+.news-content {
+    padding: 25px;
+}
+
+.news-content small {
+    color: var(--gold);
+
+    font-size: 11px;
+}
+
+.news-content h3 {
+    margin: 10px 0;
+
+    color: var(--white);
+
+    line-height: 1.4;
+}
+
+.news-content p {
+    color: #a99e97;
+
+    line-height: 1.7;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   KONTAK
+========================================================= */
+
+.contact {
+    background:
+        radial-gradient(
+            circle at center,
+            #4b120f,
+            #080303 70%
+        );
+
+    text-align: center;
+}
+
+.contact-card {
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 55px 30px;
+
+    border-radius: 22px;
+
+    border: 1px solid var(--line);
+
+    background: rgba(5,2,2,.60);
+
+    backdrop-filter: blur(12px);
+}
+
+.contact-card h2 {
+    color: var(--gold2);
+
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    color: #c3b9b2;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 40px 7%;
+
+    background: #030101;
+
+    text-align: center;
+
+    color: #746963;
+
+    font-size: 12px;
+
+    border-top: 1px solid rgba(201,168,78,.12);
+}
+
+footer strong {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width: 800px) {
+
+    nav {
+        height: 65px;
+
+        padding: 0 5%;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .brand span {
+        font-size: 12px;
+    }
+
+    .hero-content {
+        padding-top: 110px;
+    }
+
+    .emblem {
+        width: 140px;
+        height: 140px;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .hero h2 {
+        letter-spacing: 6px;
+    }
+
+    .motto {
+        margin: -25px 5% 0;
+    }
+
+    .about-grid,
+    .value-grid,
+    .highlight-grid,
+    .soldier-grid,
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+
+        grid-auto-rows: 170px;
+    }
+
+    .photo.big {
+        grid-column: span 2;
+
+        grid-row: span 1;
+    }
+
+    section {
+        padding: 80px 6%;
+    }
+
+    .info-row {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .info-row strong {
+        text-align: left;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <div class="brand">
+
+        <div class="brand-mark">
+
+            <!-- LOGO TETAP LOGO GARAMATA -->
+
+            <img
+                src="LOGO GARAMATA.png"
+                alt="Logo Yonif TP 904/Garamata"
+            >
+
+        </div>
+
+        <span>
+            YONIF TP 904
+        </span>
+
+    </div>
+
+
+    <ul>
+
+        <li>
+            <a href="#profil">
+                Profil
+            </a>
+        </li>
+
+        <li>
+            <a href="#nilai">
+                Nilai
+            </a>
+        </li>
+
+        <li>
+            <a href="#prajurit">
+                Prajurit
+            </a>
+        </li>
+
+        <li>
+            <a href="#sejarah">
+                Sejarah
+            </a>
+        </li>
+
+        <li>
+            <a href="#kegiatan">
+                Kegiatan
+            </a>
+        </li>
+
+        <li>
+            <a href="#berita">
+                Berita
+            </a>
+        </li>
+
+        <li>
+            <a href="#kontak">
+                Kontak
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+
+        <div class="emblem">
+
+            <img
+                src="LOGO GARAMATA.png"
+                alt="Logo Yonif TP 904/Garamata"
+            >
+
+        </div>
+
+
+        <div class="eyebrow">
+            PROFIL SATUAN
+        </div>
+
+
+        <h1>
+            YONIF TP 904
+        </h1>
+
+
+        <h2>
+            GARAMATA
+        </h2>
+
+
+        <p>
+
+            Website profil dan informasi publik
+            Yonif TP 904/Garamata.
+
+            <br>
+
+            Media informasi mengenai
+            profil, kegiatan, pengabdian,
+            dan dokumentasi satuan.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#profil"
+                class="btn"
+            >
+                Jelajahi Profil ↓
+            </a>
+
+
+            <a
+                href="#kegiatan"
+                class="btn btn-outline"
+            >
+                Lihat Kegiatan
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MOTTO
+===================================================== -->
+
+<div class="motto">
+
+    <strong>
+        DISIPLIN • BERANI • SETIA
+    </strong>
+
+</div>
+
+
+<!-- =====================================================
+     PROFIL
+===================================================== -->
+
+<section
+    class="about"
+    id="profil"
+>
+
+    <div class="section-head">
+
+        <div class="tag">
+            TENTANG KAMI
+        </div>
+
+        <h2>
+            Profil Satuan
+        </h2>
+
+        <p>
+            Informasi umum Yonif TP 904/Garamata
+        </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+
+        <div class="panel">
+
+            <h3>
+                Yonif TP 904/Garamata
+            </h3>
+
+            <p>
+
+                Halaman ini merupakan media informasi
+                publik mengenai profil dan kegiatan
+                Yonif TP 904/Garamata.
+
+                <br><br>
+
+                Informasi yang ditampilkan dapat diperbarui
+                sesuai dengan data dan publikasi resmi
+                yang telah mendapatkan persetujuan.
+
+            </p>
+
+
+            <div class="quote">
+
+                "DISIPLIN • BERANI • SETIA"
+
+            </div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h3>
+                Identitas Satuan
+            </h3>
+
+
+            <div class="info-list">
+
+
+                <div class="info-row">
+
+                    <span>
+                        Nama
+                    </span>
+
+                    <strong>
+                        Yonif TP 904/Garamata
+                    </strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Komandan
+                    </span>
+
+                    <strong>
+                        [Nama resmi]
+                    </strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Markas
+                    </span>
+
+                    <strong>
+                        [Alamat publik]
+                    </strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Email
+                    </span>
+
+                    <strong>
+                        YonifTP904Garamata@gmail.com
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NILAI
+===================================================== -->
+
+<section
+    class="values"
+    id="nilai"
+>
+
+    <div class="section-head">
+
+        <div class="tag">
+            LANDASAN
+        </div>
+
+        <h2>
+            Disiplin • Berani • Setia
+        </h2>
+
+        <p>
+            Nilai yang menjadi semangat dalam menjalankan
+            tugas dan pengabdian.
+        </p>
+
+    </div>
+
+
+    <div class="value-grid">
+
+
+        <div class="value">
+
+            <div class="value-icon">
+                01
+            </div>
+
+            <h3>
+                Disiplin
+            </h3>
+
+            <p>
+
+                Menjalankan tugas dengan disiplin,
+                tanggung jawab, dan profesionalisme.
+
+            </p>
+
+        </div>
+
+
+        <div class="value">
+
+            <div class="value-icon">
+                02
+            </div>
+
+            <h3>
+                Berani
+            </h3>
+
+            <p>
+
+                Menghadapi tantangan dengan keberanian,
+                keteguhan, dan rasa tanggung jawab.
+
+            </p>
+
+        </div>
+
+
+        <div class="value">
+
+            <div class="value-icon">
+                03
+            </div>
+
+            <h3>
+                Setia
+            </h3>
+
+            <p>
+
+                Menjunjung loyalitas, kebersamaan,
+                dan pengabdian kepada bangsa dan negara.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOTO PRAJURIT
+===================================================== -->
+
+<section
+    class="soldiers"
+    id="prajurit"
+>
+
+    <div class="section-head">
+
+        <div class="tag">
+            PERSONEL
+        </div>
+
+        <h2>
+            Semangat Prajurit
+        </h2>
+
+        <p>
+            Dokumentasi personel dan aktivitas satuan
+            yang telah disetujui untuk publikasi.
+        </p>
+
+    </div>
+
+
+    <div class="soldier-grid">
+
+
+        <!-- FOTO PRAJURIT 1 -->
+
+        <div class="soldier-card">
+
+            <img
+                src="prajurit1.jpg"
+                alt="Dokumentasi prajurit"
+            >
+
+            <div class="soldier-overlay">
+
+                <h3>
+                    Prajurit Garamata
+                </h3>
+
+                <p>
+                    Dokumentasi resmi satuan
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOTO PRAJURIT 2 -->
+
+        <div class="soldier-card">
+
+            <img
+                src="prajurit2.jpg"
+                alt="Dokumentasi prajurit"
+            >
+
+            <div class="soldier-overlay">
+
+                <h3>
+                    Kebersamaan
+                </h3>
+
+                <p>
+                    Semangat dan kekompakan
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOTO PRAJURIT 3 -->
+
+        <div class="soldier-card">
+
+            <img
+                src="prajurit3.jpg"
+                alt="Dokumentasi prajurit"
+            >
+
+            <div class="soldier-overlay">
+
+                <h3>
+                    Pengabdian
+                </h3>
+
+                <p>
+                    Dedikasi dalam pelaksanaan tugas
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HIGHLIGHT
+===================================================== -->
+
+<section class="highlight">
+
+    <div class="section-head">
+
+        <div class="tag">
+            SEKILAS
+        </div>
+
+        <h2>
+            Dedikasi & Pengabdian
+        </h2>
+
+        <p>
+            Ruang untuk menampilkan semangat dan
+            aktivitas positif satuan.
+        </p>
+
+    </div>
+
+
+    <div class="highlight-grid">
+
+
+        <div class="highlight-card">
+
+            <div class="number">
+                01
+            </div>
+
+            <h3>
+                Profesional
+            </h3>
+
+            <p>
+                Menjunjung profesionalisme dalam
+                setiap pelaksanaan tugas.
+            </p>
+
+        </div>
+
+
+        <div class="highlight-card">
+
+            <div class="number">
+                02
+            </div>
+
+            <h3>
+                Kebersamaan
+            </h3>
+
+            <p>
+                Membangun kekompakan dan semangat
+                kebersamaan.
+            </p>
+
+        </div>
+
+
+        <div class="highlight-card">
+
+            <div class="number">
+                03
+            </div>
+
+            <h3>
+                Pengabdian
+            </h3>
+
+            <p>
+                Berkontribusi melalui kegiatan yang
+                bermanfaat bagi masyarakat.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SEJARAH
+===================================================== -->
+
+<section
+    class="history"
+    id="sejarah"
+>
+
+    <div class="section-head">
+
+        <div class="tag">
+            PERJALANAN
+        </div>
+
+        <h2>
+            Sejarah Satuan
+        </h2>
+
+        <p>
+            Diisi berdasarkan sejarah resmi satuan.
+        </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <span>
+                [TAHUN]
+            </span>
+
+            <h3>
+                Pembentukan
+            </h3>
+
+            <p>
+                Masukkan informasi resmi mengenai
+                pembentukan satuan.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <span>
+                [TAHUN]
+            </span>
+
+            <h3>
+                Perkembangan Satuan
+            </h3>
+
+            <p>
+                Masukkan informasi perkembangan
+                satuan berdasarkan sumber resmi.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <span>
+                [TAHUN]
+            </span>
+
+            <h3>
+                Perjalanan Pengabdian
+            </h3>
+
+            <p>
+                Tambahkan catatan sejarah dan kegiatan
+                yang telah disetujui untuk publikasi.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALERI KEGIATAN
+===================================================== -->
+
+<section
+    class="gallery"
+    id="kegiatan"
+>
+
+    <div class="section-head">
+
+        <div class="tag">
+            DOKUMENTASI
+        </div>
+
+        <h2>
+            Galeri Kegiatan
+        </h2>
+
+        <p>
+            Dokumentasi kegiatan resmi satuan.
+        </p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+
+        <!-- FOTO BESAR -->
+
+        <div class="photo big">
+
+            <img
+                src="kegiatan1.jpg"
+                alt="Kegiatan Yonif TP 904/Garamata"
+            >
+
+        </div>
+
+
+        <!-- FOTO 2 -->
+
+        <div class="photo">
+
+            <img
+                src="kegiatan2.jpg"
+                alt="Kegiatan satuan"
+            >
+
+        </div>
+
+
+        <!-- FOTO 3 -->
+
+        <div class="photo">
+
+            <img
+                src="kegiatan3.jpg"
+                alt="Kegiatan satuan"
+            >
+
+        </div>
+
+
+        <!-- FOTO 4 -->
+
+        <div class="photo">
+
+            <img
+                src="kegiatan4.jpg"
+                alt="Kegiatan satuan"
+            >
+
+        </div>
+
+
+        <!-- FOTO 5 -->
+
+        <div class="photo">
+
+            <img
+                src="kegiatan5.jpg"
+                alt="Kegiatan satuan"
+            >
+
+        </div>
+
+
+        <!-- FOTO 6 -->
+
+        <div class="photo">
+
+            <img
+                src="kegiatan6.jpg"
+                alt="Kegiatan satuan"
+            >
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BERITA
+===================================================== -->
+
+<section
+    class="news"
+    id="berita"
+>
+
+    <div class="section-head">
+
+        <div class="tag">
+            INFORMASI
+        </div>
+
+        <h2>
+            Berita & Kegiatan
+        </h2>
+
+        <p>
+            Publikasi informasi resmi satuan.
+        </p>
+
+    </div>
+
+
+    <div class="news-grid">
+
+
+        <!-- BERITA 1 -->
+
+        <article class="news-card">
+
+            <div class="news-image">
+
+                <img
+                    src="JUMAT BERKAH.jpeg"
+                    alt="Jumat Berkah Yonif TP 904/Garamata"
+                >
+
+            </div>
+
+            <div class="news-content">
+
+                <small>
+                    Jumat 11 September 2026
+                </small>
+
+                <h3>
+                    Jumat Berkah
+                </h3>
+
+                <p>
+                    Yonif TP 904/GM berbagi keberkahan
+                    di hari Jumat.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- BERITA 2 -->
+
+        <article class="news-card">
+
+            <div class="news-image">
+
+                <img
+                    src="KARYA BAKTI.jpeg"
+                    alt="Kegiatan sosial satuan"
+                >
+
+            </div>
+
+            <div class="news-content">
+
+                <small>
+                    [Tanggal]
+                </small>
+
+                <h3>
+                    Kegiatan Sosial
+                </h3>
+
+                <p>
+                    Informasi kegiatan sosial dan
+                    kemasyarakatan yang dapat dipublikasikan.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- BERITA 3 -->
+
+        <article class="news-card">
+
+            <div class="news-image">
+
+                <img
+                    src="kegiatan3.jpg"
+                    alt="Kegiatan Yonif TP 904/Garamata"
+                >
+
+            </div>
+
+            <div class="news-content">
+
+                <small>
+                    [Tanggal]
+                </small>
+
+                <h3>
+                    Kegiatan Satuan
+                </h3>
+
+                <p>
+                    Dokumentasi kegiatan satuan
+                    yang telah disetujui untuk publikasi.
+                </p>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     KONTAK
+===================================================== -->
+
+<section
+    class="contact"
+    id="kontak"
+>
+
+    <div class="contact-card">
+
+        <h2>
+            Hubungi Kami
+        </h2>
+
+        <p>
+            Untuk informasi resmi, gunakan kanal
+            komunikasi yang telah ditetapkan oleh satuan.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Email:</strong>
+            YonifTP904Garamata@gmail.com
+        </p>
+
+        <p>
+            <strong>Alamat:</strong>
+            Perbulan, Laubaleng, Kabupaten Karo
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    © 2026
+
+    <strong>
+        Yonif TP 904/Garamata
+    </strong>
+
+    <br><br>
+
+    Website Profil & Informasi Publik
+
+</footer>
+
+
+</body>
+</html>
